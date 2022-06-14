@@ -6,17 +6,19 @@
  */
 string numofday(int num)
 {
-    if (num > 0 && num < 7)
+    if (num > 0 && num < 6)
     {
-        //string result = "будний";
-        Console.Write("будний");
+        string result = "будний";
+        Console.Write(result);
+        return result;
     }
     else
     {
-        //string result = "выходной";
-        Console.Write("выходной");
+        string result = "выходной";
+        Console.Write(result);
+        return result;
     }
-    //return result;
+    
 }
 
 Console.Write("Введите порядковый номер дня недели: ");

@@ -7,18 +7,22 @@ Console.Write("Введите число: ");
 string istring = Console.ReadLine();
 int lenght = istring.Length;
 
-Console.WriteLine($"Длина строки = {lenght}");
+//Console.WriteLine($"Длина строки = {lenght}");
+int index = lenght - 1;
 int inum = int.Parse(istring);
-int[] arr = new int[lenght - 1];
-//int index = lenght - 1;
-int index = 0;
-while (inum > 0)
+int[] arr = new int[lenght];
+if (lenght < 3)
 {
-    arr[index] = inum % 10;
-    Console.Write(arr[index]);
-    inum = inum / 10;
-    Console.WriteLine(inum);
-    Console.WriteLine(arr[index]);
-    //lenght = lenght - 1;
-    //index = index - 1;
+    Console.WriteLine($"Третьей цифры не существует, число {inum} - двузначное");
 }
+else if (lenght > 2)
+{
+    while (index > 0 || index == 0)
+    {
+        arr[index] = inum % 10;
+        inum = inum / 10;
+        index = index - 1;
+    }
+    Console.WriteLine($"Третья цифра = {arr[2]}");
+}
+
